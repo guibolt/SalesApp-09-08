@@ -10,7 +10,7 @@ namespace SalesApp.Entities.Order
         public Produto Produto { get; set; }
 
         public int Quantidade { get; set; }
-        public double Preco { get; set; }
+        public double Preco { get; set; }  
        
 
         public Item(){ }
@@ -25,9 +25,12 @@ namespace SalesApp.Entities.Order
 
         public double SubTotal()
         {
-            return Quantidade * Preco;
+            return Quantidade * Produto.Preco;
         }
 
-
+        public override string ToString()
+        {
+            return $" Nome do produto: {Produto.Nome} Quantidade {Quantidade}";
+        }
     }
 }

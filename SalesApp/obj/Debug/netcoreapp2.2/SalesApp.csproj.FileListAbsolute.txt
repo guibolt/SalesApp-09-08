@@ -9,3 +9,14 @@ C:\Users\guibo\Desktop\Sales\SalesApp\obj\Debug\netcoreapp2.2\SalesApp.AssemblyI
 C:\Users\guibo\Desktop\Sales\SalesApp\obj\Debug\netcoreapp2.2\SalesApp.AssemblyInfo.cs
 C:\Users\guibo\Desktop\Sales\SalesApp\obj\Debug\netcoreapp2.2\SalesApp.dll
 C:\Users\guibo\Desktop\Sales\SalesApp\obj\Debug\netcoreapp2.2\SalesApp.pdb
+C:\Users\Treinamento 5\Desktop\Sales\SalesApp-09-08\SalesApp\bin\Debug\netcoreapp2.2\SalesApp.deps.json
+C:\Users\Treinamento 5\Desktop\Sales\SalesApp-09-08\SalesApp\bin\Debug\netcoreapp2.2\SalesApp.runtimeconfig.json
+C:\Users\Treinamento 5\Desktop\Sales\SalesApp-09-08\SalesApp\bin\Debug\netcoreapp2.2\SalesApp.runtimeconfig.dev.json
+C:\Users\Treinamento 5\Desktop\Sales\SalesApp-09-08\SalesApp\bin\Debug\netcoreapp2.2\SalesApp.dll
+C:\Users\Treinamento 5\Desktop\Sales\SalesApp-09-08\SalesApp\bin\Debug\netcoreapp2.2\SalesApp.pdb
+C:\Users\Treinamento 5\Desktop\Sales\SalesApp-09-08\SalesApp\obj\Debug\netcoreapp2.2\SalesApp.csprojAssemblyReference.cache
+C:\Users\Treinamento 5\Desktop\Sales\SalesApp-09-08\SalesApp\obj\Debug\netcoreapp2.2\SalesApp.csproj.CoreCompileInputs.cache
+C:\Users\Treinamento 5\Desktop\Sales\SalesApp-09-08\SalesApp\obj\Debug\netcoreapp2.2\SalesApp.AssemblyInfoInputs.cache
+C:\Users\Treinamento 5\Desktop\Sales\SalesApp-09-08\SalesApp\obj\Debug\netcoreapp2.2\SalesApp.AssemblyInfo.cs
+C:\Users\Treinamento 5\Desktop\Sales\SalesApp-09-08\SalesApp\obj\Debug\netcoreapp2.2\SalesApp.dll
+C:\Users\Treinamento 5\Desktop\Sales\SalesApp-09-08\SalesApp\obj\Debug\netcoreapp2.2\SalesApp.pdb

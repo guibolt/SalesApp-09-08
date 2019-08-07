@@ -8,10 +8,11 @@ namespace SalesApp.Entities.Order
     public class Pedido
     {
 
-        public DateTime Data { get; set; }
+        public DateTime Data { get; set; } = DateTime.Now;
         public List<Item> Produtos { get; set; } = new List<Item>();
         public Cliente Cliente { get; set; }
-
+        public string IdPedido { get; set; } = Guid.NewGuid().ToString().Substring(0, 6);
+        public double ValorPedido { get; set; }
         public Pedido() { }
 
         public Pedido(DateTime data, List<Item> produtos, Cliente cliente)
@@ -19,15 +20,6 @@ namespace SalesApp.Entities.Order
             Data = data;
             Produtos = produtos;
             Cliente = cliente;
-        }
-
-        public void AddcionarItem(Item produto)
-        {
-            Produtos.Add(produto);
-        }
-        public void RemoverItem(Item produto)
-        {
-            Produtos.Remove(produto);
         }
         public double Total()
         {
@@ -37,19 +29,17 @@ namespace SalesApp.Entities.Order
             {
                 sum += item.SubTotal();
             }
-
-            if (sum > 100)
-            {
-                porc = sum * 0.05;
-                return sum - porc;
-            }
-            else if (sum > 300)
+            if (sum > 300)
             {
                 porc = sum * 0.10;
                 return sum - porc;
             }
+            else if (sum > 100)
+            {
+                porc = sum * 0.05;
+                return sum - porc;
+            }
             return sum;
         }
-
     }
 }
