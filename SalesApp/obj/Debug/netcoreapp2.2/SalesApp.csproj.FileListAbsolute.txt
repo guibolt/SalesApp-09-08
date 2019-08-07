@@ -1,0 +1,11 @@
+C:\Users\guibo\Desktop\Sales\SalesApp\bin\Debug\netcoreapp2.2\SalesApp.deps.json
+C:\Users\guibo\Desktop\Sales\SalesApp\bin\Debug\netcoreapp2.2\SalesApp.runtimeconfig.json
+C:\Users\guibo\Desktop\Sales\SalesApp\bin\Debug\netcoreapp2.2\SalesApp.runtimeconfig.dev.json
+C:\Users\guibo\Desktop\Sales\SalesApp\bin\Debug\netcoreapp2.2\SalesApp.dll
+C:\Users\guibo\Desktop\Sales\SalesApp\bin\Debug\netcoreapp2.2\SalesApp.pdb
+C:\Users\guibo\Desktop\Sales\SalesApp\obj\Debug\netcoreapp2.2\SalesApp.csprojAssemblyReference.cache
+C:\Users\guibo\Desktop\Sales\SalesApp\obj\Debug\netcoreapp2.2\SalesApp.csproj.CoreCompileInputs.cache
+C:\Users\guibo\Desktop\Sales\SalesApp\obj\Debug\netcoreapp2.2\SalesApp.AssemblyInfoInputs.cache
+C:\Users\guibo\Desktop\Sales\SalesApp\obj\Debug\netcoreapp2.2\SalesApp.AssemblyInfo.cs
+C:\Users\guibo\Desktop\Sales\SalesApp\obj\Debug\netcoreapp2.2\SalesApp.dll
+C:\Users\guibo\Desktop\Sales\SalesApp\obj\Debug\netcoreapp2.2\SalesApp.pdb
