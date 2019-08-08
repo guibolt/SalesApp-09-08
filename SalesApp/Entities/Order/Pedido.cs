@@ -16,11 +16,8 @@ namespace SalesApp.Entities.Order
         public double Total()
         {
             double porc, sum = 0;
-
-            foreach (var item in Produtos)
-            {
-                sum += item.SubTotal();
-            }
+            Produtos.ForEach(c => sum += c.SubTotal());
+           
             if (sum > 300)
             {
                 porc = sum * 0.10;

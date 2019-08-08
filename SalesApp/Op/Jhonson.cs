@@ -8,7 +8,7 @@ namespace SalesApp.Op
     public static class Jhonson<T>
     {
         static string traj = AppDomain.CurrentDomain.BaseDirectory;
-        public static void Recuperar(List<T> pedidos, string caminho)
+        public static void Recuperar(List<T> coisas, string caminho)
         {
             string path = $"{traj}{caminho}.json";
             using (StreamReader s = File.OpenText(path))
@@ -17,17 +17,17 @@ namespace SalesApp.Op
                 foreach (var line in lines)
                 {
                     var paut = JsonConvert.DeserializeObject<T>(line);
-                    pedidos.Add(paut);
+                    coisas.Add(paut);
                 }
             }
         }
-        public static void Salvar(List<T> produtos, string caminho)
+        public static void Salvar(List<T> coisas, string caminho)
         {
             string path = $"{traj}{caminho}.json";
             File.Delete(path);
             using (StreamWriter s = File.AppendText(path))
             {
-                foreach (var produto in produtos)
+                foreach (var produto in coisas)
                 {
                     string G = JsonConvert.SerializeObject(produto);
                     s.WriteLine(G);

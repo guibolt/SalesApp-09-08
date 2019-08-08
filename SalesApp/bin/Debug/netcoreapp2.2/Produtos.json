@@ -1,5 +1,8 @@
-{"Nome":"Carro","Preco":30000.0,"Id":1}
-{"Nome":"livro","Preco":35.0,"Id":2}
-{"Nome":"Xicara","Preco":15.0,"Id":3}
-{"Nome":"Notebook i3","Preco":1350.0,"Id":4}
-{"Nome":"Bike","Preco":650.0,"Id":5}
+{"Nome":"Carro","Preco":30000.0,"Id":0}
+{"Nome":"Livro","Preco":35.0,"Id":1}
+{"Nome":"Xicara","Preco":15.0,"Id":2}
+{"Nome":"Notebook i3","Preco":1350.0,"Id":3}
+{"Nome":"Bike","Preco":350.5,"Id":4}
+{"Nome":"Panela","Preco":40.5,"Id":5}
+{"Nome":"Iphone 8","Preco":1650.0,"Id":6}
+{"Nome":"PC","Preco":1000.5,"Id":7}

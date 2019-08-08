@@ -4,7 +4,6 @@ using SalesApp.Entities.Order;
 using SalesApp.Op;
 using System;
 using System.Collections.Generic;
-using System.Text;
 
 namespace SalesApp
 {
@@ -29,7 +28,7 @@ namespace SalesApp
                     case 1:
                         Console.Clear();
                         Console.WriteLine("CADASTRO DE PRODUTOS\n");
-                        Console.WriteLine("Quantos produtos deseja cadastrar?");
+                        Console.WriteLine("Quantos produtos deseja cadastrar?\n");
                         int.TryParse(Console.ReadLine(), out int num);
                         for (int i = 0; i < num; i++) { Produtoslst.Add(Operacoes.CadastrarProduto(Produtoslst)); }
                         Jhonson<Produto>.Salvar(Produtoslst, "Produtos");
@@ -37,7 +36,7 @@ namespace SalesApp
                     case 2:
                         Console.Clear();
                         Console.WriteLine("CADASTRO DE CLIENTES \n");
-                        Console.WriteLine("Quantos clientes deseja cadastrar?");
+                        Console.WriteLine("Quantos clientes deseja cadastrar?\n");
                         int.TryParse(Console.ReadLine(), out int cho);
                         for (int i = 0; i < cho; i++) { Clienteslst.Add(Operacoes.CadastrarCliente(Clienteslst)); }
                         Jhonson<Cliente>.Salvar(Clienteslst, "Clientes");
