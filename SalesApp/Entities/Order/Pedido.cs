@@ -1,29 +1,21 @@
 ﻿using Pedidos.Entitites;
 using System;
 using System.Collections.Generic;
-using System.Text;
 
 namespace SalesApp.Entities.Order
 {
     public class Pedido
     {
-
-        public DateTime Data { get; set; } = DateTime.Now;
-        public List<Item> Produtos { get; set; } = new List<Item>();
         public Cliente Cliente { get; set; }
+        public List<Item> Produtos { get; set; } = new List<Item>();
+        public double ValorTotalDoPedido { get; set; }
+        public DateTime Data { get; set; } = DateTime.Now;
         public string IdPedido { get; set; } = Guid.NewGuid().ToString().Substring(0, 6);
-        public double ValorPedido { get; set; }
         public Pedido() { }
-
-        public Pedido(DateTime data, List<Item> produtos, Cliente cliente)
-        {
-            Data = data;
-            Produtos = produtos;
-            Cliente = cliente;
-        }
+        public Pedido(DateTime data, List<Item> produtos, Cliente cliente) { Data = data;Produtos = produtos; Cliente = cliente; }
         public double Total()
         {
-            double porc, sum = 0.0;
+            double porc, sum = 0;
 
             foreach (var item in Produtos)
             {

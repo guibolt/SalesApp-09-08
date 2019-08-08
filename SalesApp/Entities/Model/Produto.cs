@@ -1,7 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Globalization;
-using System.Text;
+﻿using System.Globalization;
 
 namespace SalesApp.Entities.Model
 {
@@ -10,19 +7,8 @@ namespace SalesApp.Entities.Model
         public string Nome { get; set; }
         public double Preco { get; set; }
         public int Id { get; set; }
-
         public Produto() { }
-
-        public Produto(string nome, double preco, int id )
-        {
-            Nome = nome;
-            Preco = preco;
-            Id = id;
-          
-        }
-        public override string ToString()
-        {
-            return $"Nome do produto: {Nome} Preço unitario { Preco.ToString(CultureInfo.InvariantCulture)} Id {Id} ";
-        }
+        public Produto(string nome, double preco, int id ) {Nome = nome;Preco = preco; Id = id; }
+        public override string ToString() =>  $"Nome do produto: {Nome} Preço unitario { Preco.ToString(CultureInfo.InvariantCulture)} Id {Id} ";
     }
 }

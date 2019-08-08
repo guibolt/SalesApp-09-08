@@ -1,105 +1,22 @@
-﻿using Newtonsoft.Json;
-using Pedidos.Entitites;
+﻿using Pedidos.Entitites;
 using SalesApp.Entities.Model;
 using SalesApp.Entities.Order;
 using System;
 using System.Collections.Generic;
-using System.IO;
 using System.Globalization;
 namespace SalesApp.Op
 {
     static public class Operacoes
     {
         public static void Centralizar(string a) { Console.WriteLine(String.Format("{0," + ((Console.WindowWidth / 2) + (a.Length / 2)) + "}", a)); }
-        #region "Arquivos"
-        static string traj = AppDomain.CurrentDomain.BaseDirectory;
-        public static void RecuperarPedidos(List<Pedido> pedidos)
-        {
-            string path = $"{traj}Pedidos.json";
-            using (StreamReader s = File.OpenText(path))
-            {
-                string[] lines = File.ReadAllLines(path);
-                foreach (var line in lines)
-                {
-                    var paut = JsonConvert.DeserializeObject<Pedido>(line);
-                    pedidos.Add(paut);
-                }
-            }
-        }
-        public static void RecuperarClientes(List<Cliente> pedidos)
-        {
-            string path = $"{traj}Clientes.json";
-            using (StreamReader s = File.OpenText(path))
-            {
-                string[] lines = File.ReadAllLines(path);
-                foreach (var line in lines)
-                {
-                    var paut = JsonConvert.DeserializeObject<Cliente>(line);
-                    pedidos.Add(paut);
-                }
-            }
-        }
-        public static void RecuperarProdutos(List<Produto> produtos)
-        {
-            string path = $"{traj}Produtos.json";
-            using (StreamReader s = File.OpenText(path))
-            {
-                string[] lines = File.ReadAllLines(path);
-                foreach (var line in lines)
-                {
-                    var paut = JsonConvert.DeserializeObject<Produto>(line);
-                    produtos.Add(paut);
-                }
-            }
-        }
-        public static void SalverPedidos(List<Pedido> pedidos)
-        {
-            string path = $"{traj}Pedidos.json";
-            File.Delete(path);
-            using (StreamWriter s = File.AppendText(path))
-            {
-                foreach (Pedido Vez in pedidos)
-                {
-                    string G = JsonConvert.SerializeObject(Vez);
-                    s.WriteLine(G);
-                }
-            }
-        }
-        public static void SalvarClientes(List<Cliente> clientes)
-        {
-           string path = $"{traj}Clientes.json";
-            File.Delete(path);
-            using (StreamWriter s = File.AppendText(path))
-            {
-                foreach (var client in clientes)
-                {
-                    string G = JsonConvert.SerializeObject(client);
-                    s.WriteLine(G);
-                }
-            }
-        }
-        public static void SalverProdutos(List<Produto> produtos)
-        {
-            string path = $"{traj}Produtos.json";
-            File.Delete(path);
-            using (StreamWriter s = File.AppendText(path))
-            {
-                foreach (var produto in produtos)
-                {
-                    string G = JsonConvert.SerializeObject(produto);
-                    s.WriteLine(G);
-                }
-            }
-        }
-        #endregion
-
+      
         #region "Cadastros"
         public static Cliente CadastrarCliente(List<Cliente> clientes)
         {
-
             Console.WriteLine("Qual o nome do cliente ? ");
             string nome = Console.ReadLine();
             Console.WriteLine("Qual o id do cliente?");
+            Console.WriteLine($"Ids disponiveis de {clientes.Count+2} para cima!");
             int.TryParse(Console.ReadLine(), out int id);
             if (clientes.Exists(c => c.Id == id || clientes.Exists(d => d.Nome == nome)))
             {
@@ -108,6 +25,7 @@ namespace SalesApp.Op
                 Console.ReadLine();
                 CadastrarCliente(clientes);
             }
+            Console.WriteLine("CLIENTE CADASTRADO!!");
             return new Cliente(nome, id);
         }
 
@@ -125,6 +43,7 @@ namespace SalesApp.Op
                 CadastrarProduto(produtos);
             }
             Console.WriteLine("Qual é o id do produto?");
+            Console.WriteLine($"Ids disponiveus de {produtos.Count+2} para cima!");
             int.TryParse(Console.ReadLine(), out int id);
             if (produtos.Exists(c => c.Id == id || produtos.Exists(d => d.Nome == nome)))
             {
@@ -133,6 +52,7 @@ namespace SalesApp.Op
                 Console.ReadLine();
                 CadastrarProduto(produtos);
             }
+            Console.WriteLine("PRODUTO CADASTRADO!");
             return new Produto(nome, custo, id);
         }
         #endregion
@@ -151,10 +71,9 @@ namespace SalesApp.Op
         public static void ExibirPedidos(List<Pedido> pedidos)
         {
             Centralizar("LISTA DE PEDIDOS\n");
-            pedidos.ForEach(c => Console.WriteLine($"ID: {c.IdPedido} Data: {c.Data} Nome do cliente: {c.Cliente} Valor Total: {c.ValorPedido.ToString("F2", CultureInfo.InvariantCulture)}\n"));
+            pedidos.ForEach(c => Console.WriteLine($" Cliente: {c.Cliente} Valor Total: {c.ValorTotalDoPedido.ToString("F2", CultureInfo.InvariantCulture)} ID: {c.IdPedido} Data: {c.Data}\n"));
         }
         #endregion
-
         static public Pedido RealizarPedido(List<Cliente> clientes, List<Produto> produtos)
         {
             var listaItens = new List<Item>();
@@ -173,7 +92,6 @@ namespace SalesApp.Op
                 novoItem.Preco = novoItem.SubTotal();
                 listaItens.Add(novoItem);
             }
-
             Console.WriteLine("Digite a data do pedido");
             var novoPedido = new Pedido();
             novoPedido.Produtos = listaItens;
@@ -181,7 +99,8 @@ namespace SalesApp.Op
             Console.WriteLine("Escolha um cliente se baseando no id");
             int.TryParse(Console.ReadLine(), out int id);
             novoPedido.Cliente = clientes.Find(c => c.Id == id);
-            novoPedido.ValorPedido = novoPedido.Total();
+            novoPedido.ValorTotalDoPedido = novoPedido.Total();
+            Console.WriteLine("VENDA REALIZADA!");
             return novoPedido;
         }
     }
