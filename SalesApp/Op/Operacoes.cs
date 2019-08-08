@@ -4,6 +4,7 @@ using SalesApp.Entities.Order;
 using System;
 using System.Collections.Generic;
 using System.Globalization;
+using System.Linq;
 namespace SalesApp.Op
 {
     static public class Operacoes
@@ -25,7 +26,9 @@ namespace SalesApp.Op
                 Console.ReadLine();
                 CadastrarCliente(clientes);
             }
+           
             Console.WriteLine("CLIENTE CADASTRADO!!");
+            
             return new Cliente(nome, id);
         }
 
@@ -43,13 +46,11 @@ namespace SalesApp.Op
                 CadastrarProduto(produtos);
             }
             Console.WriteLine("Qual é o id do produto?\n");
-            Console.WriteLine($"Ids disponiveus de {produtos.Count + 2} para cima!\n");
+            Console.WriteLine($"Ids disponiveus de {produtos.Count +1} para cima!\n");
             int.TryParse(Console.ReadLine(), out int id);
             if (produtos.Exists(c => c.Id == id || produtos.Exists(d => d.Nome == nome)))
             {
-                Console.WriteLine("Esse produto ja está cadastrado\n");
-                Console.WriteLine("Precione enter para cadastrar novamente\n");
-                Console.ReadLine();
+                Console.WriteLine("Esse produto ja está cadastrado, cadastre novamente.\n");
                 CadastrarProduto(produtos);
             }
             else
@@ -81,16 +82,23 @@ namespace SalesApp.Op
             var listaItens = new List<Item>();
             Console.WriteLine("Quantos produtos deseja comprar?\n");
             int.TryParse(Console.ReadLine(), out int qtd);
+            Segurar("Digite uma quantidade válida", qtd, 0);
             for (int i = 0; i < qtd; i++)
             {
                 var novoItem = new Item();
                 ExibirProdutos(produtos);
                 Console.WriteLine("Qual produto deseja escolher? escolha pelo id\n");
                 int.TryParse(Console.ReadLine(), out int ids);
-                novoItem.Produto = produtos.Find(p => p.Id == ids);
+                if (!produtos.Contains(novoItem.Produto = produtos.Find(p => p.Id == ids)))
+                {
+                    Console.WriteLine("Esse produto não existe cadastre novamente!");
+                    RealizarPedido(clientes, produtos);
+                }
                 Console.WriteLine("Qual é a quantidade?\n");
                 int.TryParse(Console.ReadLine(), out int qtde);
+                Segurar("Digite uma quantidade válida", qtde, 0);
                 novoItem.Quantidade = qtde;
+                
                 novoItem.Preco = novoItem.SubTotal();
                 listaItens.Add(novoItem);
             }
@@ -100,10 +108,22 @@ namespace SalesApp.Op
             ExibirClientes(clientes);
             Console.WriteLine("Escolha um cliente se baseando no id\n");
             int.TryParse(Console.ReadLine(), out int id);
-            novoPedido.Cliente = clientes.Find(c => c.Id == id);
+            if (!clientes.Contains(novoPedido.Cliente = clientes.Find(c => c.Id == id)))
+            {
+                Console.WriteLine("Esse cliente não existe!!");
+                RealizarPedido(clientes, produtos);
+            }
             novoPedido.ValorTotalDoPedido = novoPedido.Total();
             Console.WriteLine("VENDA REALIZADA!\n");
             return novoPedido;
         }
+       static public void Segurar(string msg, int num, int outro  )
+        {
+            while (num <= outro)
+            {
+                Console.WriteLine(msg);
+            }
+        }
+
     }
 }

@@ -9,6 +9,6 @@ namespace SalesApp.Entities.Model
         public int Id { get; set; }
         public Produto() { }
         public Produto(string nome, double preco, int id ) {Nome = nome;Preco = preco; Id = id; }
-        public override string ToString() =>  $"Nome do produto: {Nome} Preço unitario { Preco.ToString(CultureInfo.InvariantCulture)} Id {Id} ";
+        public override string ToString() =>  $"Nome do produto: {Nome} Preço unitario { Preco.ToString("F2",CultureInfo.InvariantCulture)} Id {Id} ";
     }
 }
