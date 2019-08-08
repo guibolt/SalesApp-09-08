@@ -54,8 +54,6 @@ namespace SalesApp
                         Console.WriteLine(" REALIZAR VENDAS \n");
                         Pedidoslst.Add(Operacoes.RealizarPedido(Clienteslst, Produtoslst));
                         Jhonson<Pedido>.Salvar(Pedidoslst, "Pedidos");
-
-                        Console.ReadLine();
                         break;
                     case 6:
                         Console.Clear();
