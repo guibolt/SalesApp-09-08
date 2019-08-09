@@ -1,9 +1,9 @@
-{"Nome":"Carro","Preco":30000.0,"Id":0}
-{"Nome":"Livro","Preco":35.0,"Id":1}
-{"Nome":"Xicara","Preco":15.0,"Id":2}
-{"Nome":"Notebook i3","Preco":1350.0,"Id":3}
-{"Nome":"Bike","Preco":350.5,"Id":4}
-{"Nome":"Panela","Preco":40.5,"Id":5}
-{"Nome":"Iphone 8","Preco":1650.0,"Id":6}
-{"Nome":"PC","Preco":1000.5,"Id":7}
-{"Nome":"shoes","Preco":152.0,"Id":9}
+{"Nome":"Carro","Preco":30000.0,"Id":1}
+{"Nome":"Livro Harry Potter e as Reliquias da morte","Preco":35.5,"Id":2}
+{"Nome":"Xicara","Preco":15.5,"Id":3}
+{"Nome":"Notebook i3 1350,50","Preco":1500.5,"Id":4}
+{"Nome":"Bike","Preco":350.5,"Id":5}
+{"Nome":"Panelas","Preco":40.5,"Id":6}
+{"Nome":"Iphone 8","Preco":1450.86,"Id":7}
+{"Nome":"PC ","Preco":1200.8,"Id":8}
+{"Nome":"Sapatos","Preco":90.9,"Id":9}

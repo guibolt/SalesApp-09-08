@@ -13,7 +13,7 @@ namespace SalesApp
             var Pedidoslst = new List<Pedido>();
             var Clienteslst = new List<Cliente>();
             var Produtoslst = new List<Produto>();
-            Jhonson<Pedido>.Recuperar(Pedidoslst,"Pedidos");
+            Jhonson<Pedido>.Recuperar(Pedidoslst, "Pedidos");
             Jhonson<Cliente>.Recuperar(Clienteslst, "Clientes");
             Jhonson<Produto>.Recuperar(Produtoslst, "Produtos");
             View.Bora(Pedidoslst, Clienteslst, Produtoslst);

@@ -16,10 +16,10 @@ namespace SalesApp.Op
         {
             Console.WriteLine("Qual o nome do cliente ? \n");
             string nome = Console.ReadLine();
-            Console.WriteLine("Qual o id do cliente?\n");
-            Console.WriteLine($"Ids disponiveis de {clientes.Count + 2} para cima!\n");
-            int.TryParse(Console.ReadLine(), out int id);
-            if (clientes.Exists(c => c.Id == id || clientes.Exists(d => d.Nome == nome)))
+        
+            Console.WriteLine($"O Id gerado para este cliente foi: {clientes.Count + 1} \n");
+            int id = clientes.Count + 1;
+            if (clientes.Exists(d => d.Nome == nome))
             {
                 Console.WriteLine("Esse produto ja está cadastrado\n");
                 Console.WriteLine("Precione enter para cadastrar novamente\n");
@@ -30,6 +30,7 @@ namespace SalesApp.Op
             Console.WriteLine("CLIENTE CADASTRADO!!");
             
             return new Cliente(nome, id);
+
         }
 
         public static Produto CadastrarProduto(List<Produto> produtos)
@@ -45,10 +46,10 @@ namespace SalesApp.Op
                 Console.ReadLine();
                 CadastrarProduto(produtos);
             }
-            Console.WriteLine("Qual é o id do produto?\n");
-            Console.WriteLine($"Ids disponiveus de {produtos.Count +1} para cima!\n");
-            int.TryParse(Console.ReadLine(), out int id);
-            if (produtos.Exists(c => c.Id == id || produtos.Exists(d => d.Nome == nome)))
+    
+            Console.WriteLine($"O Id de seu produto é {produtos.Count + 1}!\n");
+            int id = produtos.Count + 1;
+            if (produtos.Exists(d => d.Nome == nome))
             {
                 Console.WriteLine("Esse produto ja está cadastrado, cadastre novamente.\n");
                 CadastrarProduto(produtos);

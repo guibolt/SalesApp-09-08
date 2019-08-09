@@ -14,12 +14,9 @@ namespace SalesApp
         {
             while (!RafaTheusPARASEMPRE)
             {
-                Console.WriteLine("------------------------------------------------------------------------------------------------------------------------");
-                Console.WriteLine("------------------------------------------------------------------------------------------------------------------------\n");
+                Console.WriteLine("");
                 Operacoes.Centralizar("DIGITE 1 PARA CADASTAR PRODUTO / DIGITE 2 PARA CADASTAR CLIENTE  / 3 PARA EXIBIR PRODUTOS / 4 PARA EXIBIR CLIENTES \n");
                 Operacoes.Centralizar("             DIGITE 5 PARA REALIZAR VENDAS / DIGITE 6 PARA EXIBIR VENDAS / 7 PARA SAIR /  \n");
-                Operacoes.Centralizar("------------------------------------------------------------------------------------------------------------------------");
-                Operacoes.Centralizar("------------------------------------------------------------------------------------------------------------------------");
 
                 int.TryParse(Console.ReadLine(), out int decisao);
 
